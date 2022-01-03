@@ -1,3 +1,68 @@
-h1{
-  color: red;
+/* Font Classes */
+
+.header, .body, .sub-body {
+  font-weight: 300;
 }
+
+.about-sec {
+  font-weight: 500;
+}
+
+.sub-header, .sub-header-body, .temp-font {
+  font-weight: 200;
+}
+
+.temp-font {
+  font-size: 10rem;
+}
+
+.header {
+  font-size: 3rem;
+}
+
+
+/* Font Classes End */
+
+
+/* Utility Classes */
+
+.container {
+  margin: 2% auto;
+  max-width: 95%;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Utility Classes End */
+
+body {
+  background-image: url('../Sunny_4K.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+}
+
+/* Main Weather Data */
+
+.core_unit .flex {
+  flex-direction: column;
+}
+
+/* Main Weather Data Ends */
+
+/* Carousel Section */
+
+.carousel-item .flex {
+  flex-direction: row;
+  gap: 2%;
+  margin: 2%;
+}
+
+/* Carousel Section Ends */
