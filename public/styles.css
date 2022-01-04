@@ -25,6 +25,11 @@
 
 
 /* Utility Classes */
+.grid{
+  display: grid;
+  grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
+
+}
 
 .container {
   margin: 2% auto;
@@ -66,3 +71,20 @@ body {
 }
 
 /* Carousel Section Ends */
+
+/* Seven Days Section Starts */
+.Seven-days-cards{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  
+}
+.daily-title{
+  
+}
+
+.card{
+  display: inline-block;
+}
+
+/* Seven Days Section Ends */
