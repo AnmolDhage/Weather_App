@@ -4,28 +4,83 @@ import Input from './Input.jsx';
 import Main from './Main.jsx';
 import SevenDays from './SevenDays';
 
-const REACT_APP_API_KEY = '146e375263f49719ecad4b0a3ea7c0db';
+const REACT_APP_API_KEY = 'e6a5ad1adfafd574f8393d5d9dfea2dc';
 
 function App() {
   //Location input Variable
   let [loc, setLoc] = React.useState('');
 
-  // let [coord, setCoord] = React.useState({
-  //   lon: null,
-  //   lat: null,
-  // });
 
-  let [url, setUrl] = React.useState(`https://api.openweathermap.org/data/2.5/weather?q=${''}&appid=146e375263f49719ecad4b0a3ea7c0db`);
 
-  let [url2, setUrl2] = React.useState('https://api.openweathermap.org/data/2.5/onecall?lat=&lon=&exclude=current,minutely,hourly&appid=146e375263f49719ecad4b0a3ea7c0db');
+  let [url, setUrl] = React.useState(`https://api.openweathermap.org/data/2.5/weather?q=${''}&appid=${REACT_APP_API_KEY}`);
+
+  let [url2, setUrl2] = React.useState(`https://api.openweathermap.org/data/2.5/onecall?lat=&lon=&exclude=current,minutely,hourly&appid=${REACT_APP_API_KEY}`);
+
+  let [forecastData, setForecastData] = React.useState({
+    day1: {
+      dt: null,
+      tempMin: null,
+      tempMax: null,
+      main: null,
+      logId: null,
+    },
+    day2: {
+      dt: null,
+      tempMin: null,
+      tempMax: null,
+      main: null,
+      logId: null,
+    },
+    day3: {
+      dt: null,
+      tempMin: null,
+      tempMax: null,
+      main: null,
+      logId: null,
+    },
+    day4: {
+      dt: null,
+      tempMin: null,
+      tempMax: null,
+      main: null,
+      logId: null,
+    },
+    day5: {
+      dt: null,
+      tempMin: null,
+      tempMax: null,
+      main: null,
+      logId: null,
+    },
+    day6: {
+      dt: null,
+      tempMin: null,
+      tempMax: null,
+      main: null,
+      logId: null,
+    },
+    day7: {
+      dt: null,
+      tempMin: null,
+      tempMax: null,
+      main: null,
+      logId: null,
+    },
+  });
+
 
   React.useEffect(() => {
     getWeatherForecast();
   }, [url2]);
 
+  React.useEffect(() => {
+    console.log(forecastData);
+  }, [forecastData]);
+
+
   function getLoc(loc) {
     setLoc(loc);
-    setUrl(`https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=146e375263f49719ecad4b0a3ea7c0db`);
+    setUrl(`https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${REACT_APP_API_KEY}`);
   }
 
 
@@ -34,8 +89,7 @@ function App() {
     console.log(loc);
   };
 
-  function dateConverter(inputDate)
-  {
+  function dateConverter(inputDate) {
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -46,8 +100,7 @@ function App() {
     return formattedDate;
   }
 
-  function timeConverter(inputDate)
-  {
+  function timeConverter(inputDate) {
     var date = new Date(inputDate * 1000);
     // Hours part from the timestamp
     var hours = date.getHours();
@@ -86,10 +139,6 @@ function App() {
   let getWeather = async () => {
     const api_call = await fetch(`${url}`);
     const response = await api_call.json();
-    // setCoord({
-    //   lon: 5,
-    //   lat: 10,
-    // });
 
     setCarData({
       feelsLike: Math.round((response.main.feels_like - 273.15) * 100) / 100,
@@ -99,7 +148,9 @@ function App() {
       pressure: response.main.pressure,
     });
 
-    setUrl2(`https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&exclude=current,minutely,hourly&appid=146e375263f49719ecad4b0a3ea7c0db`);
+    setUrl2(`https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&exclude=current,minutely,hourly&appid=${REACT_APP_API_KEY}`);
+
+
 
     let formattedTime = timeConverter(response.dt);
     let formattedDate = dateConverter(response.dt);
@@ -115,10 +166,63 @@ function App() {
   };
 
   //WeatherForecast API Connection
-  let getWeatherForecast = async() => {
-      const api_call2 = await fetch(`${url2}`);
-      const response2 = await api_call2.json();
-      console.log(response2);
+  let getWeatherForecast = async () => {
+    const api_call2 = await fetch(`${url2}`);
+    const response2 = await api_call2.json();
+    setForecastData({
+      day1: {
+        dt: response2.daily[0].dt,
+        tempMin: response2.daily[0].temp.min,
+        tempMax: response2.daily[0].temp.max,
+        main: response2.daily[0].weather[0].main,
+        logId: response2.daily[0].weather[0].id,
+      },
+      day2: {
+        dt: response2.daily[1].dt,
+        tempMin: response2.daily[1].temp.min,
+        tempMax: response2.daily[1].temp.max,
+        main: response2.daily[1].weather[0].main,
+        logId: response2.daily[1].weather[0].id,
+      },
+      day3: {
+        dt: response2.daily[2].dt,
+        tempMin: response2.daily[2].temp.min,
+        tempMax: response2.daily[2].temp.max,
+        main: response2.daily[2].weather[0].main,
+        logId: response2.daily[2].weather[0].id,
+      },
+      day4: {
+        dt: response2.daily[3].dt,
+        tempMin: response2.daily[3].temp.min,
+        tempMax: response2.daily[3].temp.max,
+        main: response2.daily[3].weather[0].main,
+        logId: response2.daily[3].weather[0].id,
+      },
+      day5: {
+        dt: response2.daily[4].dt,
+        tempMin: response2.daily[4].temp.min,
+        tempMax: response2.daily[4].temp.max,
+        main: response2.daily[4].weather[0].main,
+        logId: response2.daily[4].weather[0].id,
+      },
+      day6: {
+        dt: response2.daily[5].dt,
+        tempMin: response2.daily[5].temp.min,
+        tempMax: response2.daily[5].temp.max,
+        main: response2.daily[5].weather[0].main,
+        logId: response2.daily[5].weather[0].id,
+      },
+      day7: {
+        dt: response2.daily[6].dt,
+        tempMin: response2.daily[6].temp.min,
+        tempMax: response2.daily[6].temp.max,
+        main: response2.daily[6].weather[0].main,
+        logId: response2.daily[6].weather[0].id,
+      },
+
+
+    });
+
   };
 
   return (
@@ -126,7 +230,7 @@ function App() {
       <Input funLoc={getLoc} loc={loc} search={search} />
       <Main data={coreDetails} />
       <WeatherDataCar data={carouselData} />
-      <SevenDays />
+      <SevenDays fData={forecastData} />
     </div>
   );
 }
