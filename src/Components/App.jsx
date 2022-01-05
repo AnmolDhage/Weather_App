@@ -8,30 +8,45 @@ const REACT_APP_API_KEY = '146e375263f49719ecad4b0a3ea7c0db';
 
 function App() {
   //Location input Variable
-  let [loc, setLoc] = React.useState('London');
+  let [loc, setLoc] = React.useState('');
 
-  let [coord, setCoord] = React.useState({
-    lon: null,
-    lat: null,
-  });
+  // let [coord, setCoord] = React.useState({
+  //   lon: null,
+  //   lat: null,
+  // });
 
-  let [url, setUrl] = React.useState('https://api.openweathermap.org/data/2.5/weather?q=London&appid=146e375263f49719ecad4b0a3ea7c0db');
+  let [url, setUrl] = React.useState(`https://api.openweathermap.org/data/2.5/weather?q=${''}&appid=146e375263f49719ecad4b0a3ea7c0db`);
 
-  let [url2, setUrl2] = React.useState('https://api.openweathermap.org/data/2.5/onecall?lat=51.5085&lon=-0.1257&exclude=current,minutely,hourly&appid=146e375263f49719ecad4b0a3ea7c0db');
+  let [url2, setUrl2] = React.useState('https://api.openweathermap.org/data/2.5/onecall?lat=&lon=&exclude=current,minutely,hourly&appid=146e375263f49719ecad4b0a3ea7c0db');
+
+  React.useEffect(() => {
+    getWeatherForecast();
+  }, [url2]);
 
   function getLoc(loc) {
     setLoc(loc);
     setUrl(`https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=146e375263f49719ecad4b0a3ea7c0db`);
   }
 
-  async function search() {
-    await getWeather();
-    // getWeatherForecast();
+
+  function search() {
+    getWeather();
     console.log(loc);
-    console.log(coord);
   };
 
   function dateConverter(inputDate)
+  {
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    var date = new Date(inputDate * 1000);
+    let day = days[date.getDay()];
+    let month = months[date.getMonth()];
+    let formattedDate = `${day}, ${month} ${date.getDate()}, ${date.getFullYear()}`
+    return formattedDate;
+  }
+
+  function timeConverter(inputDate)
   {
     var date = new Date(inputDate * 1000);
     // Hours part from the timestamp
@@ -71,6 +86,11 @@ function App() {
   let getWeather = async () => {
     const api_call = await fetch(`${url}`);
     const response = await api_call.json();
+    // setCoord({
+    //   lon: 5,
+    //   lat: 10,
+    // });
+
     setCarData({
       feelsLike: Math.round((response.main.feels_like - 273.15) * 100) / 100,
       wind: response.wind.speed,
@@ -79,19 +99,17 @@ function App() {
       pressure: response.main.pressure,
     });
 
-    let formattedTime = dateConverter(response.dt);
+    setUrl2(`https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&exclude=current,minutely,hourly&appid=146e375263f49719ecad4b0a3ea7c0db`);
 
-    await setCoord({
-      lon: 5,
-      lat: 10,
-    });
+    let formattedTime = timeConverter(response.dt);
+    let formattedDate = dateConverter(response.dt);
 
     coreUnit({
       temp: Math.round((response.main.temp - 273.15) * 10) / 10,
       name: response.name,
-      dt: formattedTime,
-      time: response.timezone,
-      main: response.weather.main,
+      dt: formattedDate,
+      time: formattedTime,
+      main: response.weather[0].main,
     });
 
   };
