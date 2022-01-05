@@ -73,11 +73,6 @@ function App() {
     getWeatherForecast();
   }, [url2]);
 
-  React.useEffect(() => {
-    console.log(forecastData);
-  }, [forecastData]);
-
-
   function getLoc(loc) {
     setLoc(loc);
     setUrl(`https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${REACT_APP_API_KEY}`);
@@ -175,49 +170,49 @@ function App() {
         tempMin: response2.daily[0].temp.min,
         tempMax: response2.daily[0].temp.max,
         main: response2.daily[0].weather[0].main,
-        logId: response2.daily[0].weather[0].id,
+        logId: response2.daily[0].weather[0].icon,
       },
       day2: {
         dt: response2.daily[1].dt,
         tempMin: response2.daily[1].temp.min,
         tempMax: response2.daily[1].temp.max,
         main: response2.daily[1].weather[0].main,
-        logId: response2.daily[1].weather[0].id,
+        logId: response2.daily[1].weather[0].icon,
       },
       day3: {
         dt: response2.daily[2].dt,
         tempMin: response2.daily[2].temp.min,
         tempMax: response2.daily[2].temp.max,
         main: response2.daily[2].weather[0].main,
-        logId: response2.daily[2].weather[0].id,
+        logId: response2.daily[2].weather[0].icon,
       },
       day4: {
         dt: response2.daily[3].dt,
         tempMin: response2.daily[3].temp.min,
         tempMax: response2.daily[3].temp.max,
         main: response2.daily[3].weather[0].main,
-        logId: response2.daily[3].weather[0].id,
+        logId: response2.daily[3].weather[0].icon,
       },
       day5: {
         dt: response2.daily[4].dt,
         tempMin: response2.daily[4].temp.min,
         tempMax: response2.daily[4].temp.max,
         main: response2.daily[4].weather[0].main,
-        logId: response2.daily[4].weather[0].id,
+        logId: response2.daily[4].weather[0].icon,
       },
       day6: {
         dt: response2.daily[5].dt,
         tempMin: response2.daily[5].temp.min,
         tempMax: response2.daily[5].temp.max,
         main: response2.daily[5].weather[0].main,
-        logId: response2.daily[5].weather[0].id,
+        logId: response2.daily[5].weather[0].icon,
       },
       day7: {
         dt: response2.daily[6].dt,
         tempMin: response2.daily[6].temp.min,
         tempMax: response2.daily[6].temp.max,
         main: response2.daily[6].weather[0].main,
-        logId: response2.daily[6].weather[0].id,
+        logId: response2.daily[6].weather[0].icon,
       },
 
 
