@@ -73,14 +73,17 @@ body {
 /* Carousel Section Ends */
 
 /* Seven Days Section Starts */
+.Seven-days {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding: 1% 1%;
+}
+
 .Seven-days-cards{
   display: flex;
   justify-content:space-between;
   align-items:center;
-  
-}
-.daily-title{
-  
+
 }
 
 .card{

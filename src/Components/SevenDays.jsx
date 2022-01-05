@@ -4,7 +4,7 @@ import Card from './Card';
 function SevenDays(props) {
   return (
 
-    <div style={{ border: '1px solid' }}>
+    <div>
       <div className="Seven-days">
         <h1 className="daily-title">Daily</h1>
         <div className="Seven-days-cards">

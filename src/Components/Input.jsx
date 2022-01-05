@@ -20,7 +20,7 @@ function Input(props) {
         placeholder="Location"
       />
       <button onClick={handleClick}>
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
       </button>
     </div>
   )

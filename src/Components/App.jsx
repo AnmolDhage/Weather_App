@@ -9,18 +9,42 @@ const REACT_APP_API_KEY = '146e375263f49719ecad4b0a3ea7c0db';
 function App() {
   //Location input Variable
   let [loc, setLoc] = React.useState('London');
+
+  let [coord, setCoord] = React.useState({
+    lon: null,
+    lat: null,
+  });
+
   let [url, setUrl] = React.useState('https://api.openweathermap.org/data/2.5/weather?q=London&appid=146e375263f49719ecad4b0a3ea7c0db');
 
+  let [url2, setUrl2] = React.useState('https://api.openweathermap.org/data/2.5/onecall?lat=51.5085&lon=-0.1257&exclude=current,minutely,hourly&appid=146e375263f49719ecad4b0a3ea7c0db');
 
   function getLoc(loc) {
     setLoc(loc);
     setUrl(`https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=146e375263f49719ecad4b0a3ea7c0db`);
   }
 
-  function search() {
-    getWeather();
+  async function search() {
+    await getWeather();
+    // getWeatherForecast();
     console.log(loc);
+    console.log(coord);
   };
+
+  function dateConverter(inputDate)
+  {
+    var date = new Date(inputDate * 1000);
+    // Hours part from the timestamp
+    var hours = date.getHours();
+    // Minutes part from the timestamp
+    var minutes = "0" + date.getMinutes();
+    // Seconds part from the timestamp
+    var seconds = "0" + date.getSeconds();
+    // Will display time in 10:30:23 format
+    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+    return formattedTime;
+  }
 
   // Main Data Object
   let [coreDetails, coreUnit] = React.useState({
@@ -55,15 +79,12 @@ function App() {
       pressure: response.main.pressure,
     });
 
-    var date = new Date(response.dt * 1000);
-    // Hours part from the timestamp
-    var hours = date.getHours();
-    // Minutes part from the timestamp
-    var minutes = "0" + date.getMinutes();
-    // Seconds part from the timestamp
-    var seconds = "0" + date.getSeconds();
-    // Will display time in 10:30:23 format
-    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    let formattedTime = dateConverter(response.dt);
+
+    await setCoord({
+      lon: 5,
+      lat: 10,
+    });
 
     coreUnit({
       temp: Math.round((response.main.temp - 273.15) * 10) / 10,
@@ -74,7 +95,14 @@ function App() {
     });
 
   };
-  // getWeather();
+
+  //WeatherForecast API Connection
+  let getWeatherForecast = async() => {
+      const api_call2 = await fetch(`${url2}`);
+      const response2 = await api_call2.json();
+      console.log(response2);
+  };
+
   return (
     <div className="grid">
       <Input funLoc={getLoc} loc={loc} search={search} />
