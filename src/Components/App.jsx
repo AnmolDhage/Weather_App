@@ -73,7 +73,6 @@ function App() {
 
   React.useEffect(() => {
     getWeatherForecast();
-    console.log(infoc);
   }, [url2]);
 
   function infoVisible() {
@@ -250,16 +249,21 @@ function App() {
       <div className={infoc}>
         <p>
           Greetings from Weather Mate!
-
+        </p>
+        <p>
           The Weather Mate, one of the best responsive weather application on web.
           It consists of accurate weather info for anytime and everywhere.
-
-          whether it may be local weather forecast & real time rain, storm, ice & snow reports and much more.
-
+        </p>
+        <p>
+          Whether it may be local weather forecast & real time rain, storm, ice & snow reports and much more.
+        </p>
+        <p>
           By weather info, you can prepare your plan carefully. Weather Mate detects weather in your current location automatically.
-
+        </p>
+        <p>
           There are many information in weather forecast which includes weather Real-time condition, atmospheric pressure, relative humidity, visibility distance, precipitation in different unites, wind speed and direction, in addition to 6 days future forecast, also hourly weather forecast.
-
+        </p>
+        <p>
           Powered By
           <img className="open-weather-logo" src="./Images/open-weather-logo.png" alt="open-weather-logo" />
         </p>
