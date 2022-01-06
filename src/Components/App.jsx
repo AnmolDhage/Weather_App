@@ -6,6 +6,8 @@ import SevenDays from './SevenDays';
 
 const REACT_APP_API_KEY = 'e6a5ad1adfafd574f8393d5d9dfea2dc';
 
+
+
 function App() {
   //Location input Variable
   let [loc, setLoc] = React.useState('');
@@ -101,16 +103,15 @@ function App() {
     var hours = date.getHours();
     // Minutes part from the timestamp
     var minutes = "0" + date.getMinutes();
-    // Seconds part from the timestamp
-    var seconds = "0" + date.getSeconds();
     // Will display time in 10:30:23 format
-    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    var formattedTime = hours + ':' + minutes.substr(-2);
 
     return formattedTime;
   }
 
   // Main Data Object
   let [coreDetails, coreUnit] = React.useState({
+    mainLogo: null,
     name: null,
     dt: null,
     temp: null,
@@ -151,6 +152,7 @@ function App() {
     let formattedDate = dateConverter(response.dt);
 
     coreUnit({
+      mainLogo: response.weather[0].icon,
       temp: Math.round((response.main.temp - 273.15) * 10) / 10,
       name: response.name,
       dt: formattedDate,

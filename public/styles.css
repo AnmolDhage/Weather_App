@@ -4,6 +4,10 @@
   font-weight: 300;
 }
 
+.body{
+  font-size:1.2rem;
+}
+
 .about-sec {
   font-weight: 500;
 }
@@ -28,6 +32,12 @@
 
 
 /* Utility Classes */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 255, 255);
+  opacity: 0.8; /* Firefox */
+}
+
+
 .grid{
   display: grid;
   grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
@@ -86,14 +96,36 @@ body {
   flex-direction: column;
 }
 
+.main-logo{
+  padding: 1rem 0;
+  width: 15%;
+}
+
+/* .deg-cel{
+  padding-left: 20px;
+  font-size:40%;
+  font-weight:medium;
+  position: absolute;
+  height:15px;
+} */
+
 /* Main Weather Data Ends */
 
 /* Carousel Section */
 
 .carousel-item .flex {
+
   flex-direction: row;
-  gap: 2%;
+  gap: 4%;
   margin: 2%;
+}
+.WeatherInfo{
+  transition: all 0.2s ease;
+}
+
+.WeatherInfo:hover{
+  transform: translateY(-20%);
+  cursor: pointer;
 }
 
 /* Carousel Section Ends */
@@ -102,10 +134,11 @@ body {
 .Seven-days {
   border-top: 1px solid;
   border-bottom: 1px solid;
-  padding: 1% 1%;
+  padding: 2% 1%;
 }
 
 .Seven-days-cards{
+  gap: 2%;
   display: flex;
   justify-content:space-between;
   align-items:center;

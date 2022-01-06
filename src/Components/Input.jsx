@@ -14,11 +14,18 @@ function Input(props) {
     <div className="searchbar">
       <div className='container flex'>
         <input
+          onKeyPress={(event) => {
+            if (event.key === "Enter") {
+              props.search();
+            }
+          }}
+
           onChange={handleChange}
           name="loc"
           type="text"
           value={props.loc}
           placeholder="Location"
+          autocomplete="off"
         />
         <button onClick={handleClick}>
           <i className="fas fa-search"></i>
