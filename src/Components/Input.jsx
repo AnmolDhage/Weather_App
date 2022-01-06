@@ -11,17 +11,19 @@ function Input(props) {
   }
 
   return (
-    <div className='container flex'>
-      <input
-        onChange={handleChange}
-        name="loc"
-        type="text"
-        value={props.loc}
-        placeholder="Location"
-      />
-      <button onClick={handleClick}>
-        <i className="fas fa-search"></i>
-      </button>
+    <div className="searchbar">
+      <div className='container flex'>
+        <input
+          onChange={handleChange}
+          name="loc"
+          type="text"
+          value={props.loc}
+          placeholder="Location"
+        />
+        <button onClick={handleClick}>
+          <i className="fas fa-search"></i>
+        </button>
+      </div>
     </div>
   )
 }

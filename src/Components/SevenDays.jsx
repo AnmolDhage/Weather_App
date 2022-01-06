@@ -8,6 +8,7 @@ function SevenDays(props) {
     <div>
       <div className="Seven-days">
         <h1 className="daily-title">Daily</h1>
+
         <div className="Seven-days-cards">
           <Card
             day={props.fData.day1.dt}

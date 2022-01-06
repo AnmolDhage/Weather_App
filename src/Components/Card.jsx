@@ -3,7 +3,7 @@ import React from 'react';
 function Card(props) {
 
   function dateConverter(inputDate) {
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
     var date = new Date(inputDate * 1000);
     let day = days[date.getDay()];
@@ -14,9 +14,12 @@ function Card(props) {
   return (
     <div className="card">
       <div>{dateConverter(props.day)}</div>
-      <div><img src={`.././Icons/${props.logo}.png`} alt={props.logo}/></div>
-      <div>{Math.round((props.tempMin - 273.15) * 100) / 100}&deg;C</div>
-      <div>{Math.round((props.tempMax - 273.15) * 100) / 100}&deg;C</div>
+
+      <div className="card-img"><img src={"./Icons/" + props.logo + ".svg"} alt="logo" /></div>
+      <div >
+        <div className="card-temp card-MaxTemp">{Math.round(props.tempMax - 273.15)}&deg;</div>
+        <div className="card-temp card-MinTemp">{Math.round(props.tempMin - 273.15)}&deg;</div>
+      </div>
       <div>{props.desc}</div>
     </div>
   )

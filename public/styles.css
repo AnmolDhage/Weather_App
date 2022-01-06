@@ -20,6 +20,9 @@
   font-size: 3rem;
 }
 
+.card-MinTemp{
+  font-size: 12px;
+}
 
 /* Font Classes End */
 
@@ -46,13 +49,36 @@
 /* Utility Classes End */
 
 body {
-  background-image: url('../Sunny_4K.png');
+  background-image: url('./Images/Sunny_4K.png');
   background-repeat: no-repeat;
   background-size: 100%;
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: 'Poppins', sans-serif;
   padding: 0;
 }
+
+/* input section starts*/
+
+.searchbar .flex{
+  flex-direction: row !important;
+}
+
+.searchbar input, .searchbar button{
+ color: #fff;
+ padding: 0 1%;
+ border:none ;
+ border-bottom: 1px solid #fff;
+ outline: none;
+ background-color: rgba(255, 255, 255, 0);
+}
+
+.searchbar input :onFocus{
+  outline: none;
+  background-color: rgba(153, 12, 12, 0.918);
+}
+
+
+/* input section ends*/
 
 /* Main Weather Data */
 
@@ -87,7 +113,32 @@ body {
 }
 
 .card{
+  padding: 1.5%;
+  width: 8rem;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 0.5s ease;
+}
+
+.card:hover{
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+
+}
+
+.card-img{
+  width: 35%;
+  padding: 4% 0;
+}
+.card-temp{
   display: inline-block;
 }
+
+.card-MaxTemp{
+  padding-right: 6%;
+}
+
+
 
 /* Seven Days Section Ends */
