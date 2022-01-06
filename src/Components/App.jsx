@@ -2,7 +2,7 @@ import React from 'react';
 import WeatherDataCar from './WeatherDataCar.jsx';
 import Input from './Input.jsx';
 import Main from './Main.jsx';
-import SevenDays from './SevenDays';
+import SevenDays from './SevenDays.jsx';
 
 const REACT_APP_API_KEY = 'e6a5ad1adfafd574f8393d5d9dfea2dc';
 
@@ -12,7 +12,7 @@ function App() {
   //Location input Variable
   let [loc, setLoc] = React.useState('');
 
-
+  let [infoc, setInfoc] = React.useState('info-content');
 
   let [url, setUrl] = React.useState(`https://api.openweathermap.org/data/2.5/weather?q=${''}&appid=${REACT_APP_API_KEY}`);
 
@@ -73,7 +73,14 @@ function App() {
 
   React.useEffect(() => {
     getWeatherForecast();
+    console.log(infoc);
   }, [url2]);
+
+  function infoVisible() {
+    setInfoc(prevValue => {
+      return prevValue === 'info-content' ? 'info-content info-visible' : 'info-content';
+    });
+  }
 
   function getLoc(loc) {
     setLoc(loc);
@@ -223,11 +230,41 @@ function App() {
   };
 
   return (
-    <div className="grid">
-      <Input funLoc={getLoc} loc={loc} search={search} />
-      <Main data={coreDetails} />
-      <WeatherDataCar data={carouselData} />
-      <SevenDays fData={forecastData} />
+    <div>
+
+      <div className='Nav'>
+        <div id="nav" className="container flex">
+          <img className="wm-logo" src="./Images/Weather_Mate_logo.png" alt="wm-logo" />
+          <div>
+            <Input funLoc={getLoc} loc={loc} search={search} />
+          </div>
+        </div>
+      </div>
+
+      <div className="grid">
+        <Main data={coreDetails} />
+        <WeatherDataCar data={carouselData} />
+        <SevenDays fData={forecastData} />
+      </div>
+
+      <div className={infoc}>
+        <p>
+          Greetings from Weather Mate!
+
+          The Weather Mate, one of the best responsive weather application on web.
+          It consists of accurate weather info for anytime and everywhere.
+
+          whether it may be local weather forecast & real time rain, storm, ice & snow reports and much more.
+
+          By weather info, you can prepare your plan carefully. Weather Mate detects weather in your current location automatically.
+
+          There are many information in weather forecast which includes weather Real-time condition, atmospheric pressure, relative humidity, visibility distance, precipitation in different unites, wind speed and direction, in addition to 6 days future forecast, also hourly weather forecast.
+
+          Powered By
+          <img className="open-weather-logo" src="./Images/open-weather-logo.png" alt="open-weather-logo" />
+        </p>
+      </div>
+      <a onClick={infoVisible} className="info"><i className="fas fa-info-circle fa-2x"></i></a>
     </div>
   );
 }

@@ -41,11 +41,12 @@
 .grid{
   display: grid;
   grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
-
+  margin: 0 auto;
+  width: 60vw;
 }
 
 .container {
-  margin: 2% auto;
+  margin: 1% auto;
   max-width: 95%;
 }
 
@@ -67,6 +68,56 @@ body {
   padding: 0;
 }
 
+/* Nav Section */
+
+#nav {
+  flex-direction: row !important;
+  justify-content: space-between;
+  width: 90vw;
+}
+
+.wm-logo {
+  height: auto;
+  width: 10%;
+}
+
+/* Nav Section Ends */
+
+/* Info Seaction */
+
+.info {
+  bottom:2%;
+  color: rgba(255, 255, 255, 0.5);
+  position:absolute;
+  right:5vw;
+}
+
+.info:hover {
+  color: #fff;
+}
+
+.open-weather-logo {
+  width: 50%;
+  height: auto;
+}
+
+.info-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  bottom:2%;
+  padding: 2%;
+  position:absolute;
+  right:5vw;
+  visibility: hidden;
+  width: 20%;
+}
+
+.info-visible {
+  visibility: visible;
+}
+
+/* Info Section Ends */
+
 /* input section starts*/
 
 .searchbar .flex{
@@ -84,7 +135,6 @@ body {
 
 .searchbar input :onFocus{
   outline: none;
-  background-color: rgba(153, 12, 12, 0.918);
 }
 
 
@@ -134,7 +184,7 @@ body {
 .Seven-days {
   border-top: 1px solid;
   border-bottom: 1px solid;
-  padding: 2% 1%;
+  padding: 1% 1% 2%;
 }
 
 .Seven-days-cards{

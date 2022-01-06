@@ -25,7 +25,7 @@ function Input(props) {
           type="text"
           value={props.loc}
           placeholder="Location"
-          autocomplete="off"
+          autoComplete="off"
         />
         <button onClick={handleClick}>
           <i className="fas fa-search"></i>
