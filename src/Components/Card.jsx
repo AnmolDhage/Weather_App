@@ -13,14 +13,14 @@ function Card(props) {
 
   return (
     <div className="card">
-      <div>{dateConverter(props.day)}</div>
+      <div className="body">{dateConverter(props.day)}</div>
 
       <div className="card-img"><img src={"./Icons/" + props.logo + ".svg"} alt="logo" /></div>
       <div >
-        <div className="card-temp card-MaxTemp">{Math.round(props.tempMax - 273.15)}&deg;</div>
+        <div className="card-temp card-MaxTemp body">{Math.round(props.tempMax - 273.15)}&deg;</div>
         <div className="card-temp card-MinTemp">{Math.round(props.tempMin - 273.15)}&deg;</div>
       </div>
-      <div>{props.desc}</div>
+      <div className="body">{props.desc}</div>
     </div>
   )
 }

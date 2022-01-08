@@ -78,7 +78,7 @@ function App() {
 
   function infoVisible() {
     setInfoc(prevValue => {
-      return prevValue === 'info-content' ? 'info-content info-visible' : 'info-content';
+      return prevValue === 'info-content' ? 'info-content info-visible aboutFont' : 'info-content';
     });
   }
 
@@ -253,7 +253,7 @@ function App() {
         <SevenDays fData={forecastData} />
       </div>
 
-      <footer>
+      <div className='flex-footer'>
         <div className={infoc}>
           <p>
             Greetings from Weather Mate!
@@ -277,7 +277,7 @@ function App() {
           </p>
         </div>
         <a onClick={infoVisible} className="info"><i className="fas fa-info-circle fa-2x"></i></a>
-      </footer>
+      </div>
     </div>
   );
 }
