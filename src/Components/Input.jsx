@@ -3,7 +3,7 @@ import React from 'react';
 function Input(props) {
 
   function handleChange(event) {
-    props.funLoc(event.target.value);
+    props.funLoc((event.target.value));
   }
 
   function handleClick() {
@@ -24,7 +24,7 @@ function Input(props) {
           name="loc"
           type="text"
           value={props.loc}
-          placeholder="Location"
+          placeholder="Enter City"
           autoComplete="off"
         />
         <button onClick={handleClick}>

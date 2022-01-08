@@ -46,7 +46,6 @@
 }
 
 .container {
-  margin: 1% auto;
   max-width: 95%;
 }
 
@@ -60,12 +59,18 @@
 /* Utility Classes End */
 
 body {
-  background-image: url('./Images/Sunny_4K.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
   color: rgb(255, 255, 255);
   font-family: 'Poppins', sans-serif;
+  margin: 0;
   padding: 0;
+}
+
+.bg-img {
+  background-image: url('./Images/Sunny_4K.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 }
 
 /* Nav Section */
@@ -73,12 +78,13 @@ body {
 #nav {
   flex-direction: row !important;
   justify-content: space-between;
+  padding-top: 2%;
   width: 90vw;
 }
 
 .wm-logo {
   height: auto;
-  width: 10%;
+  width: 15%;
 }
 
 /* Nav Section Ends */
@@ -225,3 +231,9 @@ body {
 
 
 /* Seven Days Section Ends */
+
+/* Media Queries Start */
+
+@media only screen and (min-width: )
+
+/* Media Queries Start End */

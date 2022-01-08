@@ -3,6 +3,7 @@ import WeatherDataCar from './WeatherDataCar.jsx';
 import Input from './Input.jsx';
 import Main from './Main.jsx';
 import SevenDays from './SevenDays.jsx';
+let _ = require('lodash');
 
 const REACT_APP_API_KEY = 'e6a5ad1adfafd574f8393d5d9dfea2dc';
 
@@ -83,11 +84,12 @@ function App() {
 
   function getLoc(loc) {
     setLoc(loc);
-    setUrl(`https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${REACT_APP_API_KEY}`);
+    setUrl(`https://api.openweathermap.org/data/2.5/weather?q=${_.startCase(loc)}&appid=${REACT_APP_API_KEY}`);
   }
 
 
   function search() {
+    setLoc(_.startCase(loc));
     getWeather();
     console.log(loc);
   };
@@ -119,6 +121,7 @@ function App() {
   let [coreDetails, coreUnit] = React.useState({
     mainLogo: null,
     name: null,
+    country: null,
     dt: null,
     temp: null,
     main: null,
@@ -152,7 +155,10 @@ function App() {
 
     setUrl2(`https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&exclude=current,minutely,hourly&appid=${REACT_APP_API_KEY}`);
 
-
+    if (response.name != _.startCase(loc))
+    {
+      alert(`Sorry we couldn't find ${loc}. We're displaying the nearest city name data. Press OK to continue.`);
+    }
 
     let formattedTime = timeConverter(response.dt);
     let formattedDate = dateConverter(response.dt);
@@ -161,6 +167,7 @@ function App() {
       mainLogo: response.weather[0].icon,
       temp: Math.round((response.main.temp - 273.15) * 10) / 10,
       name: response.name,
+      country: response.sys.country,
       dt: formattedDate,
       time: formattedTime,
       main: response.weather[0].main,
@@ -246,29 +253,31 @@ function App() {
         <SevenDays fData={forecastData} />
       </div>
 
-      <div className={infoc}>
-        <p>
-          Greetings from Weather Mate!
-        </p>
-        <p>
-          The Weather Mate, one of the best responsive weather application on web.
-          It consists of accurate weather info for anytime and everywhere.
-        </p>
-        <p>
-          Whether it may be local weather forecast & real time rain, storm, ice & snow reports and much more.
-        </p>
-        <p>
-          By weather info, you can prepare your plan carefully. Weather Mate detects weather in your current location automatically.
-        </p>
-        <p>
-          There are many information in weather forecast which includes weather Real-time condition, atmospheric pressure, relative humidity, visibility distance, precipitation in different unites, wind speed and direction, in addition to 6 days future forecast, also hourly weather forecast.
-        </p>
-        <p>
-          Powered By
-          <img className="open-weather-logo" src="./Images/open-weather-logo.png" alt="open-weather-logo" />
-        </p>
-      </div>
-      <a onClick={infoVisible} className="info"><i className="fas fa-info-circle fa-2x"></i></a>
+      <footer>
+        <div className={infoc}>
+          <p>
+            Greetings from Weather Mate!
+          </p>
+          <p>
+            The Weather Mate, one of the best responsive weather application on web.
+            It consists of accurate weather info for anytime and everywhere.
+          </p>
+          <p>
+            Whether it may be local weather forecast & real time rain, storm, ice & snow reports and much more.
+          </p>
+          <p>
+            By weather info, you can prepare your plan carefully. Weather Mate detects weather in your current location automatically.
+          </p>
+          <p>
+            There are many information in weather forecast which includes weather Real-time condition, atmospheric pressure, relative humidity, visibility distance, precipitation in different unites, wind speed and direction, in addition to 6 days future forecast, also hourly weather forecast.
+          </p>
+          <p>
+            Powered By
+            <img className="open-weather-logo" src="./Images/open-weather-logo.png" alt="open-weather-logo" />
+          </p>
+        </div>
+        <a onClick={infoVisible} className="info"><i className="fas fa-info-circle fa-2x"></i></a>
+      </footer>
     </div>
   );
 }
