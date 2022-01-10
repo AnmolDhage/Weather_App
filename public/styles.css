@@ -22,6 +22,7 @@
 
 .header {
   font-size: 3rem;
+  text-align: center;
 }
 
 .card-MinTemp{
@@ -175,10 +176,10 @@ body {
 /* Carousel Section */
 
 .carousel-item .flex {
-
   flex-direction: row;
   gap: 4%;
   margin: 2%;
+  text-align: center;
 }
 .WeatherInfo{
   transition: all 0.2s ease;

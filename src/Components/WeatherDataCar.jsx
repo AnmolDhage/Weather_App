@@ -7,7 +7,6 @@ function WeatherDataCar(props) {
 
   window.addEventListener('resize', () => {
     setWidth(window.innerWidth);
-    console.log(width);
   });
 
   if(width <= 425) {
