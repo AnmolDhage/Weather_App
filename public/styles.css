@@ -32,10 +32,12 @@
 
 
 /* Utility Classes */
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+
+::placeholder {
   color: rgb(255, 255, 255);
-  opacity: 0.8; /* Firefox */
+  opacity: 0.8;
 }
+
 
 
 .grid{
@@ -69,7 +71,7 @@ body {
   background-image: url('./Images/Sunny_4K.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
 }
 
@@ -94,7 +96,7 @@ body {
 
 
 .info {
-  bottom: 2%;
+  bottom: -12%;
   color: rgba(255, 255, 255, 0.5);
   right: 4%;
   position: absolute;
@@ -112,7 +114,7 @@ body {
 .info-content {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  bottom: 2%;
+  bottom: -12%;
   padding: 2%;
   position: absolute;
   right: 4%;
@@ -130,6 +132,7 @@ body {
 
 .searchbar .flex{
   flex-direction: row !important;
+  justify-content: flex-end;
 }
 
 .searchbar input, .searchbar button{
@@ -195,15 +198,14 @@ body {
   padding: 1% 1% 2%;
 }
 
-.Seven-days-cards{
+.Seven-days-cards {
   gap: 2%;
   display: flex;
   justify-content:space-between;
   align-items:center;
-
 }
 
-.card{
+.card {
   padding: 1.5%;
   width: 8rem;
   display: inline-block;
@@ -252,6 +254,10 @@ body {
     font-size: 2rem;
   }
 
+  .grid {
+    margin: 1% auto 0;
+  }
+
   .card-MinTemp{
     font-size: 8px;
   }
@@ -262,19 +268,157 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
-  .aboutFont {
-    font-size: 0.6rem;
+
+  .card{
+    font-size: 0.8rem;
+    width: 5.5rem;
+  }
+
+  .card-img{
+    width: 30%;
   }
 
   .body{
-    font-size:1rem;
+    font-size:0.8rem;
   }
-  .temp-font {
-    font-size: 7rem;
+
+  .grid {
+    margin: 5% auto 0;
+  }
+
+  .aboutFont {
+    font-size: 0.5rem;
   }
 
   .header {
     font-size: 2rem;
+  }
+
+  .temp-font {
+    font-size: 5rem;
+  }
+
+  .card-MinTemp{
+    font-size: 0.6rem;
+  }
+
+  .fa-2x {
+    font-size: 1em;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .aboutFont {
+      font-size: 0.7rem;
+    }
+
+    .bg-img {
+      height: 134vh;
+      width: 134vw;
+    }
+
+    .grid {
+      width: auto;
+      margin-top: 10%;
+    }
+
+    .body{
+      font-size:1rem;
+    }
+    .temp-font {
+      font-size: 7rem;
+    }
+
+    .header {
+      font-size: 2rem;
+    }
+
+    .card-MinTemp{
+      font-size: 8px;
+    }
+
+    .main-logo {
+      width: 10%;
+    }
+
+    .info {
+      right: -25%;
+    }
+
+    .info-content {
+      right: -25%;
+      width: 35%;
+    }
+
+  }
+
+
+@media only screen and (max-width: 425px) {
+
+  .wm-logo {
+    margin-top: 1.5%;
+    width: 35%;
+  }
+
+  .bg-img{
+    background-image: url('./Images/bg-425.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .searchbar input, .searchbar button {
+    font-size: 0.7rem;
+  }
+
+  .grid {
+    margin-top: 25%;
+    width: 80vw;
+  }
+
+  .aboutFont {
+    font-size: 0.5rem;
+  }
+
+  .info-content {
+    bottom: 2%;
+    right: 2%;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 80%;
+  }
+
+  .info {
+    bottom: 2%;
+    right: 4%;
+    font-size: 0.6rem;
+  }
+
+  .body{
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+  .temp-font {
+    font-size: 4rem;
+  }
+
+  .header {
+    font-size: 1.4rem;
+  }
+
+  .sub-header {
+    font-size: 0.8rem;
+  }
+
+  .daily-title {
+    font-size: 1rem;
+  }
+
+  .card {
+    font-size: 0.6rem;
+    width: 4rem;
   }
 
   .card-MinTemp{
@@ -282,7 +426,45 @@ body {
   }
 
   .main-logo {
-    width: 10%;
+    width: 25%;
   }
+
+  .weatherCarousel {
+    margin-top: 3%;
+  }
+
+  .Seven-days-cards {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 5rem;
+  }
+
+  .Seven-days {
+    margin: 3% 0;
+    padding: 3% 1%;
+  }
+
+  .searchinput {
+    justify-self: flex-end;
+    width: 65%;
+  }
+
+  .carousel-indicators {
+    display: none;
+  }
+
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 1rem;
+  }
+
+}
+
+@media only screen and (max-width: 320px)
+{
+  .wm-logo {
+    width: 40%;
+  }
+}
+
 
 /* Media Queries Start End */

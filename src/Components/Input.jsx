@@ -14,6 +14,7 @@ function Input(props) {
     <div className="searchbar">
       <div className='container flex'>
         <input
+          className="searchinput"
           onKeyPress={(event) => {
             if (event.key === "Enter") {
               props.search();

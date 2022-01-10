@@ -5,11 +5,12 @@ import Main from './Main.jsx';
 import SevenDays from './SevenDays.jsx';
 let _ = require('lodash');
 
-const REACT_APP_API_KEY = 'e6a5ad1adfafd574f8393d5d9dfea2dc';
+const REACT_APP_API_KEY = `72e9f804324727a67b4b9ce389ed8e04`;
 
 
 
 function App() {
+
   //Location input Variable
   let [loc, setLoc] = React.useState('');
 
