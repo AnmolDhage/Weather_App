@@ -11,6 +11,7 @@ const REACT_APP_API_KEY = `72e9f804324727a67b4b9ce389ed8e04`;
 
 function App() {
 
+
   //Location input Variable
   let [loc, setLoc] = React.useState('');
 
@@ -121,8 +122,8 @@ function App() {
   // Main Data Object
   let [coreDetails, coreUnit] = React.useState({
     mainLogo: null,
-    name: 'Please Search for city name',
-    country: 'to get weather details',
+    name: 'City',
+    country: 'Country',
     dt: null,
     temp: null,
     main: null,
@@ -274,6 +275,7 @@ function App() {
       </div>
     </div>
   );
+  
 }
 
 export default App;
