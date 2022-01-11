@@ -9,7 +9,6 @@ function SevenDays(props) {
 
   window.addEventListener('resize', () => {
     setWidth(window.innerWidth);
-    console.log(width);
   });
 
   if (width <= 550 && width > 375) {

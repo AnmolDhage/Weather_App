@@ -10,14 +10,13 @@ const REACT_APP_API_KEY = `72e9f804324727a67b4b9ce389ed8e04`;
 
 
 function App() {
-
-
+  window.onload = search;
   //Location input Variable
-  let [loc, setLoc] = React.useState('');
+  let [loc, setLoc] = React.useState('Mumbai');
 
   let [infoc, setInfoc] = React.useState('info-content');
 
-  let [url, setUrl] = React.useState(`https://api.openweathermap.org/data/2.5/weather?q=${''}&appid=${REACT_APP_API_KEY}`);
+  let [url, setUrl] = React.useState(`https://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=${REACT_APP_API_KEY}`);
 
   let [url2, setUrl2] = React.useState(`https://api.openweathermap.org/data/2.5/onecall?lat=&lon=&exclude=current,minutely,hourly&appid=${REACT_APP_API_KEY}`);
 
@@ -275,7 +274,7 @@ function App() {
       </div>
     </div>
   );
-  
+
 }
 
 export default App;
