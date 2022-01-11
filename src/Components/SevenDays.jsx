@@ -9,9 +9,10 @@ function SevenDays(props) {
 
   window.addEventListener('resize', () => {
     setWidth(window.innerWidth);
+    console.log(width);
   });
 
-  if (width <= 425 && width > 375) {
+  if (width <= 550 && width > 375) {
     return (
       <div className="Seven-days">
         <h1 className="daily-title">Daily</h1>
@@ -95,7 +96,7 @@ function SevenDays(props) {
         </Carousel>
       </div>
     )
-  } else if(width <= 375) {
+  } else if (width <= 375) {
     return (
       <div className="Seven-days">
         <h1 className="daily-title">Daily</h1>

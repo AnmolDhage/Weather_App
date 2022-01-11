@@ -268,7 +268,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1400px) {
 
   .card{
     font-size: 0.8rem;
@@ -309,7 +309,13 @@ body {
 
 }
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 998px) {
+
+  .wm-logo {
+    width: 12rem;
+    margin-top: 0.5em;
+  }
 
     .aboutFont {
       font-size: 0.7rem;
@@ -352,11 +358,15 @@ body {
       right: -25%;
       width: 35%;
     }
+    
+  .bg-img{
+    background-image: url('./Images/bg-425.png');
+  }
 
   }
 
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 550px) {
 
   .wm-logo {
     margin-top: 1.5%;

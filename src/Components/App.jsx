@@ -156,8 +156,7 @@ function App() {
 
     setUrl2(`https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&exclude=current,minutely,hourly&appid=${REACT_APP_API_KEY}`);
 
-    if (response.name != _.startCase(loc))
-    {
+    if (response.name != _.startCase(loc)) {
       alert(`Sorry we couldn't find ${loc}. We're displaying the nearest city name data. Press OK to continue.`);
     }
 
@@ -237,7 +236,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="flex">
 
       <div className='Nav'>
         <div id="nav" className="container flex">
