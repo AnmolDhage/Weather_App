@@ -20,6 +20,8 @@ function App() {
 
   let [url2, setUrl2] = React.useState(`https://api.openweathermap.org/data/2.5/onecall?lat=&lon=&exclude=current,minutely,hourly&appid=${REACT_APP_API_KEY}`);
 
+
+
   let [forecastData, setForecastData] = React.useState({
     day1: {
       dt: null,
@@ -92,7 +94,7 @@ function App() {
   function search() {
     setLoc(_.startCase(loc));
     getWeather();
-    console.log(loc);
+    setLoc('');
   };
 
   function dateConverter(inputDate) {

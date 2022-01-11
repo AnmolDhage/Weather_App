@@ -47,8 +47,6 @@
   position:fixed;z-index: 100;
 }
 
-
-
 .grid{
   display: grid;
   grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
@@ -80,7 +78,7 @@ body {
   background-image: url('./Images/Sunny_4K.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 135vh;
+  height: 120vh;
   width: 100%;
 }
 
@@ -366,7 +364,7 @@ body {
       right: -25%;
       width: 35%;
     }
-
+    
   .bg-img{
     background-image: url('./Images/bg-425.png');
   }

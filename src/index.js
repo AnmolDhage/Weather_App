@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './Components/App.jsx';
 
-var loader = document.getElementById("loader");
+let loader = document.getElementById("loader");
 
-  window.addEventListener("load", function () {
-    loader.style.display = "none";
-});
-
+const myTimeout = setTimeout(function () {
+  loader.style.display = "none";
+}, 2000);
 
 ReactDOM.render(
   <App />
