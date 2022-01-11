@@ -1,11 +1,12 @@
 import React from 'react';
+import env from "react-dotenv";
 import WeatherDataCar from './WeatherDataCar.jsx';
 import Input from './Input.jsx';
 import Main from './Main.jsx';
 import SevenDays from './SevenDays.jsx';
 let _ = require('lodash');
 
-const REACT_APP_API_KEY = '72e9f804324727a67b4b9ce389ed8e04';
+const REACT_APP_API_KEY = env.REACT_APP_API_KEY;
 
 
 
