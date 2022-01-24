@@ -22,27 +22,6 @@ Clone the project
   git clone https://link-to-project
 ```
 
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm start
-```
-
-
-## Tech Stack
-
 **Client:** React, HTML, CSS, JavaScript
 
 
