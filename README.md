@@ -14,14 +14,6 @@ weather forecast of next seven days.
 - Clean and Precise UI
 - Live Weather data
 
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://link-to-project
-```
-
 **Client:** React, HTML, CSS, JavaScript
 
 
