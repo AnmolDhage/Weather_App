@@ -1,9 +1,8 @@
 
 # Weather Mate
 
-Implemented two APIs i.e. 'Current Weather data' to
-get current weather data and 'One Call' API to get
-weather forecast of next seven days.
+Implemented Open Weather API to get current weather and 7 days forecast.
+User needs to enter city name to get weather data.
 
 
 
