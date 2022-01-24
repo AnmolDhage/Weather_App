@@ -14,8 +14,8 @@ weather forecast of next seven days.
 - Clean and Precise UI
 - Live Weather data
 
-**Client:** React, HTML, CSS, JavaScript
-
+**Stack:** React, HTML, CSS, JavaScript
+**API: ** Open Weather API
 
 ## Authors
 
