@@ -4,13 +4,6 @@
 Implemented Open Weather API to get current weather and 7 days forecast.
 User needs to enter city name to get weather data.
 
-
-
-https://user-images.githubusercontent.com/85545016/150806231-067fe2f2-d084-4b93-93fc-ae8c61eb5a1b.mp4
-
-
-
-
 ## Features
 
 - Cross Platform
