@@ -45,10 +45,6 @@ Start the server
 
 **Client:** React, HTML, CSS, JavaScript
 
-**Server:** Node, Express
-
-**Database:** Mongoose
-
 
 ## Authors
 
