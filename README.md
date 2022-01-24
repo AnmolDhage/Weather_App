@@ -20,3 +20,4 @@ User needs to enter city name to get weather data.
 - [@AnmolDhage](https://github.com/AnmolDhage)
 - [@Jatin](https://github.com/Mr-Hypocrite)
 - [@Nivesh](https://github.com/Nivesh42)
+- [@Naman](https://github.com/Naman13Kumawat)
