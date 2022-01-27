@@ -109,25 +109,26 @@ body {
   padding: 2%;
   font-size: 0.8rem;
   position:absolute ;
-  right: 2rem;
-  bottom: 2rem;
+  right: 6rem;
+  bottom: 3rem;
   width: 20%;
-  display:none;   
+  opacity: 0;
+  transition: all 1s;   
 }
 
 .info-visible{
-  display: block;
+  opacity: 1;
 }
 
-
-.info {
-  bottom: -12%;
+.infoBtn {
+  bottom: 1rem;
   color: rgba(255, 255, 255, 0.5);
-  right: 4%;
+  right: 4rem;
   position: absolute;
 }
 
-.info:hover {
+.infoBtn:hover {
+  transition: 500ms;
   color: #fff;
 }
 
@@ -135,18 +136,6 @@ body {
   width: 50%;
   height: auto;
 }
-
-.info-content {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  bottom: -12%;
-  padding: 2%;
-  position: absolute;
-  right: 4%;
-  visibility: hidden;
-  width: 20%;
-}
-
 
 /* Info Section Ends */
 
@@ -337,7 +326,7 @@ body {
   }
 
   .fa-2x {
-    font-size: 1em;
+    font-size: 1.5rem;
   }
 
 }
@@ -378,12 +367,8 @@ body {
       width: 10%;
     }
 
-    .info {
-      right: -25%;
-    }
-
-    .info-content {
-      right: -25%;
+    .info-block {
+      background-color: rgba(0, 0, 0, 0.8);
       width: 35%;
     }
     
@@ -414,16 +399,13 @@ body {
     font-size: 0.5rem;
   }
 
-  .info-content {
-    bottom: 2%;
-    right: 2%;
-    background-color: rgba(0, 0, 0, 0.9);
+  .info-block {
+    right: 3rem;
     width: 80%;
   }
 
-  .info {
-    bottom: 2%;
-    right: 4%;
+  .infoBtn {
+    right: 1rem;
     font-size: 0.6rem;
   }
 
