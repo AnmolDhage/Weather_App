@@ -4,6 +4,7 @@ import WeatherDataCar from './WeatherDataCar.jsx';
 import Input from './Input.jsx';
 import Main from './Main.jsx';
 import SevenDays from './SevenDays.jsx';
+import Footer from "./Footer";
 let _ = require('lodash');
 
 const REACT_APP_API_KEY = env.REACT_APP_API_KEY;
@@ -255,26 +256,7 @@ function App() {
         <WeatherDataCar data={carouselData} />
         <SevenDays fData={forecastData} />
       </div>
-
-      <div className='flex-footer'>
-        <div className={infoc}>
-          <p>
-            Greetings from Weather Mate!
-          </p>
-          <p>
-            Weather Mate, one of the best responsive weather application on web.
-            It consists of accurate weather info for anytime and everywhere.
-          </p>
-          <p>
-            WeatherMate provides weather details, atmospheric pressure, relative humidity, visibility distance, wind speed, in addition to 7 days future forecast.
-          </p>
-          <p>
-            Powered By
-            <img className="open-weather-logo" src="./Images/open-weather-logo.png" alt="open-weather-logo" />
-          </p>
-        </div>
-        <a onClick={infoVisible} className="info"><i className="fas fa-info-circle fa-2x"></i></a>
-      </div>
+      <Footer />
     </div>
   );
 

@@ -1,3 +1,8 @@
+html{
+  margin: 0;
+  padding: 0;
+}
+
 /* Font Classes */
 
 .header, .body, .sub-body {
@@ -72,14 +77,11 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-}
-
-.bg-img {
   background-image: url('./Images/Sunny_4K.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 120vh;
-  width: 100%;
+  padding-bottom: 1rem;
+  background-attachment:fixed; ;
 }
 
 /* Nav Section */
@@ -100,6 +102,22 @@ body {
 
 /* Info Seaction */
 
+
+.info-block{
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 2%;
+  font-size: 0.8rem;
+  position:absolute ;
+  right: 2rem;
+  bottom: 2rem;
+  width: 20%;
+  display:none;   
+}
+
+.info-visible{
+  display: block;
+}
 
 
 .info {
@@ -129,9 +147,6 @@ body {
   width: 20%;
 }
 
-.info-visible {
-  visibility: visible;
-}
 
 /* Info Section Ends */
 
@@ -239,6 +254,18 @@ body {
   padding-right: 6%;
 }
 
+.footer {
+   position:fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: transparent;
+   color: white;
+   text-align: center;
+   display: flex;
+   justify-content: flex-end;
+}
+
 
 
 /* Seven Days Section Ends */
@@ -327,11 +354,6 @@ body {
       font-size: 0.7rem;
     }
 
-    .bg-img {
-      height: 134vh;
-      width: 134vw;
-    }
-
     .grid {
       width: auto;
       margin-top: 10%;
@@ -365,9 +387,9 @@ body {
       width: 35%;
     }
     
-  .bg-img{
-    background-image: url('./Images/bg-425.png');
-  }
+    body{
+      background-image: url('./Images/bg-425.png');
+    }
 
   }
 
@@ -377,14 +399,6 @@ body {
   .wm-logo {
     margin-top: 1.5%;
     width: 35%;
-  }
-
-  .bg-img{
-    background-image: url('./Images/bg-425.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
   }
 
   .searchbar input, .searchbar button {
